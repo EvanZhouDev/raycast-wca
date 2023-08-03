@@ -24,7 +24,6 @@ export default function Command(props) {
         .filter((x) => x.trim() !== "")
         .map((x) => x.trim());
       let avatar = $(".avatar").attr("src");
-      console.log(avatar);
       let avatarImg = `![](https://images.weserv.nl/?url=${avatar}?v=4&h=150&w=150&fit=cover&mask=circle&maxage=7d)`;
       let country = tableData[5];
       let gender = tableData[7];
@@ -34,7 +33,6 @@ export default function Command(props) {
 
       let eventData = [];
       for (let el of tableData) {
-        console.log(el)
         if (!["Competition", "Gold", "Silver", "Bronze"].includes(el)) eventData.push(el);
         else break;
       }
