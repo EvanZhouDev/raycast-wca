@@ -34,7 +34,8 @@ export default function Command(props) {
 
       let eventData = [];
       for (let el of tableData) {
-        if (el !== "Competition") eventData.push(el);
+        console.log(el)
+        if (!["Competition", "Gold", "Silver", "Bronze"].includes(el)) eventData.push(el);
         else break;
       }
 
@@ -62,6 +63,7 @@ export default function Command(props) {
         "7x7x7 Cube": "7x7",
         "3x3x3 One-Handed": "OH",
         Pyraminx: "Pyram.",
+        "Square-1": "Sq-1",
       };
       personalRecordInformation = `\n## Current Personal Records 🏆 \n| Event | NR   | CR   | WR   | Single | Average | WR   | CR   | NR   |\n|-------|------|------|------|--------|---------|------|------|------|`;
       for (let eventJSON of eventJSONs) {
